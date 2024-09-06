@@ -63,9 +63,13 @@ print("error:", calc_error_rate_for_single_vector_w(trained_w, numpy_x, numpy_y)
 
 
 def plot_trained_w_and_dataset(numpy_x, numpy_y, trained_w):
+    x_vals = np.arange(-2, 2, .01)
+    y_vals = -(trained_w[0][0] * x_vals) / trained_w[1][0]
     plt.scatter(numpy_x[:, 0], numpy_x[:, 1], c=numpy_y)
-    plt.plot(trained_w)
+    plt.plot(x_vals, y_vals)
 
 
 plot_trained_w_and_dataset(numpy_x, numpy_y, trained_w)
+
+
 # %%
